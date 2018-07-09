@@ -19,7 +19,7 @@
         "php": "^7.1",
         "illuminate/console": "5.6.*",
         "illuminate/support": "5.6.*",
-        "symfony/http-foundation": "~4.1",
+        "symfony/var-dumper": "~4.1",
         "illuminate/http": "5.6.*"
     },
     "require-dev": {
