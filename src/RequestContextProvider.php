@@ -8,7 +8,10 @@ use Symfony\Component\VarDumper\Dumper\ContextProvider\ContextProviderInterface;
 
 class RequestContextProvider implements ContextProviderInterface
 {
+    /** @var Request */
     private $currentRequest;
+
+    /** @var VarCloner  */
     private $cloner;
 
     public function __construct(Request $currentRequest = null)
