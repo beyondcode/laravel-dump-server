@@ -13,7 +13,7 @@ This package will give you a dump server, that collects all your `dump` call out
 You can install the package via composer:
 
 ```bash
-composer require beyondcode/laravel-dump-server
+composer require --dev beyondcode/laravel-dump-server
 ```
 
 The package will register itself automatically. 
