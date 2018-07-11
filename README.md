@@ -35,6 +35,12 @@ Start the dump server by calling the artisan command:
 php artisan dump-server
 ```
 
+You can set the output format to HTML using the `--format` option:
+
+```bash
+php artisan dump-server --format=html > dump.html
+```
+
 And then you can, as you are used to, put `dump` calls in your methods. But instead of dumping the output in your current HTTP request, they will be dumped in the artisan command.
 This is very useful, when you want to dump data from API requests, without having to deal with HTTP errors.
 
