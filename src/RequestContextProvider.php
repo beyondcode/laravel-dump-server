@@ -26,15 +26,21 @@ class RequestContextProvider implements ContextProviderInterface
         if (null === $this->currentRequest) {
             return null;
         }
+
         $controller = null;
+
         if ($route = $this->currentRequest->route()) {
             $controller = $route->controller;
+
+            if (! $controller && ! is_string($route->action['uses'])) {
+                $controller = $route->action['uses'];
+            }
         }
 
         return array(
             'uri' => $this->currentRequest->getUri(),
             'method' => $this->currentRequest->getMethod(),
-            'controller' => $controller ? $this->cloner->cloneVar(class_basename($this->currentRequest->route()->controller)) : $controller,
+            'controller' => $controller ? $this->cloner->cloneVar(class_basename($controller)) : $controller,
             'identifier' => spl_object_hash($this->currentRequest),
         );
     }
