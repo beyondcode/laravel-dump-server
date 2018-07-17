@@ -29,7 +29,10 @@
     "autoload": {
         "psr-4": {
             "BeyondCode\\DumpServer\\": "src"
-        }
+        },
+        "files": [
+            "helpers.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
