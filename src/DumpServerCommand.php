@@ -27,7 +27,7 @@ class DumpServerCommand extends Command
      *
      * @var string
      */
-    protected $description = 'Start the dump server to collect dump information.';
+    protected $description = 'Start the dump server to collect dump information';
 
     /** @var DumpServer  */
     private $server;
