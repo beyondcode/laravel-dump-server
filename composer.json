@@ -17,10 +17,10 @@
     ],
     "require": {
         "php": "^7.1",
-        "illuminate/console": "5.6.*",
-        "illuminate/support": "5.6.*",
-        "symfony/var-dumper": "^4.1.1",
-        "illuminate/http": "5.6.*"
+        "illuminate/console": "5.6.*|5.7.*",
+        "illuminate/http": "5.6.*|5.7.*",
+        "illuminate/support": "5.6.*|5.7.*",
+        "symfony/var-dumper": "^4.1.1"
     },
     "require-dev": {
         "larapack/dd": "^1.0",

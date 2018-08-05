@@ -2,12 +2,12 @@
 
 namespace BeyondCode\DumpServer;
 
-use Illuminate\Support\Debug\HtmlDumper;
 use Symfony\Component\VarDumper\Cloner\VarCloner;
 use Symfony\Component\VarDumper\Dumper\CliDumper;
+use Symfony\Component\VarDumper\Dumper\HtmlDumper;
 use Symfony\Component\VarDumper\Server\Connection;
 
-class Dumper extends \Illuminate\Support\Debug\Dumper
+class Dumper
 {
     /** @var Connection */
     private $connection;
