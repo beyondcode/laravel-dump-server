@@ -5,11 +5,11 @@ namespace BeyondCode\DumpServer;
 use Illuminate\Console\Command;
 
 use InvalidArgumentException;
-use Illuminate\Support\Debug\HtmlDumper;
 use Symfony\Component\Console\Style\SymfonyStyle;
 use Symfony\Component\VarDumper\Cloner\Data;
 use Symfony\Component\VarDumper\Command\Descriptor\HtmlDescriptor;
 use Symfony\Component\VarDumper\Dumper\CliDumper;
+use Symfony\Component\VarDumper\Dumper\HtmlDumper;
 use Symfony\Component\VarDumper\Server\DumpServer;
 use Symfony\Component\VarDumper\Command\Descriptor\CliDescriptor;
 
