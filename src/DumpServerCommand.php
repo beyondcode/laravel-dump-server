@@ -20,20 +20,28 @@ class DumpServerCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'dump-server {--format=cli : The output format (cli,html)}';
+    protected $signature = 'dump-server {--format=cli : The output format (cli,html).}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Start the dump server to collect dump information';
+    protected $description = 'Start the dump server to collect dump information.';
 
     /**
+     * The Dump server.
+     *
      * @var \Symfony\Component\VarDumper\Server\DumpServer
      */
     private $server;
 
+    /**
+     * DumpServerCommand constructor.
+     *
+     * @param  \Symfony\Component\VarDumper\Server\DumpServer  $server
+     * @return void
+     */
     public function __construct(DumpServer $server)
     {
         $this->server = $server;
@@ -41,6 +49,11 @@ class DumpServerCommand extends Command
         parent::__construct();
     }
 
+    /**
+     * Handle the command.
+     *
+     * @return void
+     */
     public function handle()
     {
         switch ($format = $this->option('format')) {
