@@ -29,34 +29,32 @@ class DumpServerCommand extends Command
      */
     protected $description = 'Start the dump server to collect dump information';
 
-    /** @var DumpServer  */
-    private $server;
-
     /**
-     * @var \Symfony\Component\VarDumper\Command\Descriptor\DumpDescriptorInterface[]
+     * @var \Symfony\Component\VarDumper\Server\DumpServer
      */
-    private $descriptors;
+    private $server;
 
     public function __construct(DumpServer $server)
     {
         $this->server = $server;
-
-        $this->descriptors = [
-            'cli' => new CliDescriptor(new CliDumper()),
-            'html' => new HtmlDescriptor(new HtmlDumper()),
-        ];
 
         parent::__construct();
     }
 
     public function handle()
     {
-        $io = new SymfonyStyle($this->input, $this->output);
-        $format = $this->option('format');
-
-        if (! $descriptor = $this->descriptors[$format] ?? null) {
-            throw new InvalidArgumentException(sprintf('Unsupported format "%s".', $format));
+        switch ($format = $this->option('format')) {
+            case 'cli':
+                $descriptor = new CliDescriptor(new CliDumper);
+                break;
+            case 'html':
+                $descriptor = new HtmlDescriptor(new HtmlDumper);
+                break;
+            default:
+                throw new InvalidArgumentException(sprintf('Unsupported format "%s".', $format));
         }
+
+        $io = new SymfonyStyle($this->input, $this->output);
 
         $errorIo = $io->getErrorStyle();
         $errorIo->title('Laravel Var Dump Server');
