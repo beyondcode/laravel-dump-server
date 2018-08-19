@@ -9,10 +9,20 @@ use Symfony\Component\VarDumper\Server\Connection;
 
 class Dumper
 {
-    /** @var Connection */
+    /**
+     * The connection.
+     *
+     * @var \Symfony\Component\VarDumper\Server\Connection|null
+     */
     private $connection;
 
-    public function __construct(Connection $connection)
+    /**
+     * Dumper constructor.
+     *
+     * @param \Symfony\Component\VarDumper\Server\Connection|null $connection
+     * @return void
+     */
+    public function __construct(Connection $connection = null)
     {
         $this->connection = $connection;
     }
