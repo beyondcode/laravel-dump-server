@@ -19,7 +19,7 @@ class Dumper
     /**
      * Dumper constructor.
      *
-     * @param \Symfony\Component\VarDumper\Server\Connection|null $connection
+     * @param  \Symfony\Component\VarDumper\Server\Connection|null  $connection
      * @return void
      */
     public function __construct(Connection $connection = null)
