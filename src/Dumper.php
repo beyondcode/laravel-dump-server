@@ -36,11 +36,10 @@ class Dumper
     public function dump($value)
     {
         if (class_exists(CliDumper::class)) {
-            $dumper = in_array(PHP_SAPI, ['cli', 'phpdbg']) ? new CliDumper : new HtmlDumper;
-
             $data = (new VarCloner)->cloneVar($value);
 
-            if (!$this->connection || !$this->connection->write($data)) {
+            if ($this->connection === null || $this->connection->write($data) === false) {
+                $dumper = in_array(PHP_SAPI, ['cli', 'phpdbg']) ? new CliDumper : new HtmlDumper;
                 $dumper->dump($data);
             }
         } else {
