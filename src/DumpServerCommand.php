@@ -34,7 +34,7 @@ class DumpServerCommand extends Command
      *
      * @var \Symfony\Component\VarDumper\Server\DumpServer
      */
-    private $server;
+    protected $server;
 
     /**
      * DumpServerCommand constructor.
