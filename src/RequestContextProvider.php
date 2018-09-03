@@ -43,7 +43,7 @@ class RequestContextProvider implements ContextProviderInterface
     public function getContext(): ?array
     {
         if ($this->currentRequest === null) {
-            return;
+            return null;
         }
 
         $controller = null;
