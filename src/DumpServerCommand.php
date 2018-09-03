@@ -78,7 +78,22 @@ class DumpServerCommand extends Command
         $errorIo->comment('Quit the server with CONTROL-C.');
 
         $this->server->listen(function (Data $data, array $context, int $clientId) use ($descriptor, $io) {
+            $this->share($data, $context, $clientId);
             $descriptor->describe($io, $data, $context, $clientId);
         });
+    }
+
+    /**
+     * Share the contents of the dump.
+     *
+     * @param  \Symfony\Component\VarDumper\Cloner\Data  $data
+     * @param  array  $context
+     * @param  int  $clientId
+     *
+     * @return void
+     */
+    protected function share(Data $data, array $context, int $clientId)
+    {
+        //
     }
 }
