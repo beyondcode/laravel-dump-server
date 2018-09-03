@@ -78,8 +78,8 @@ class DumpServerCommand extends Command
         $errorIo->comment('Quit the server with CONTROL-C.');
 
         $this->server->listen(function (Data $data, array $context, int $clientId) use ($descriptor, $io) {
-            $this->share($data, $context, $clientId);
             $descriptor->describe($io, $data, $context, $clientId);
+            $this->share($data, $context, $clientId);
         });
     }
 
