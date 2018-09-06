@@ -34,7 +34,7 @@ class DumpServerCommand extends Command
      *
      * @var \Symfony\Component\VarDumper\Server\DumpServer
      */
-    private $server;
+    protected $server;
 
     /**
      * DumpServerCommand constructor.
@@ -79,6 +79,21 @@ class DumpServerCommand extends Command
 
         $this->server->listen(function (Data $data, array $context, int $clientId) use ($descriptor, $io) {
             $descriptor->describe($io, $data, $context, $clientId);
+            $this->share($data, $context, $clientId);
         });
+    }
+
+    /**
+     * Share the contents of the dump.
+     *
+     * @param  \Symfony\Component\VarDumper\Cloner\Data  $data
+     * @param  array  $context
+     * @param  int  $clientId
+     *
+     * @return void
+     */
+    protected function share(Data $data, array $context, int $clientId)
+    {
+        //
     }
 }
