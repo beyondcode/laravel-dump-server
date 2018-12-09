@@ -8,6 +8,8 @@ Bringing the [Symfony Var-Dump Server](https://symfony.com/doc/current/component
 
 This package will give you a dump server, that collects all your `dump` call outputs, so that it does not interfere with HTTP / API responses.
 
+> If you want to learn how to create reusable PHP packages yourself, take a look at my upcoming [PHP Package Development](https://phppackagedevelopment.com) video course.
+
 ## Installation
 
 You can install the package via composer:
