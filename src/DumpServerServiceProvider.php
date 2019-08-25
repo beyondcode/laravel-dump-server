@@ -21,7 +21,7 @@ class DumpServerServiceProvider extends ServiceProvider
 
             $this->publishes([
                 __DIR__.'/../config/config.php' => config_path('debug-server.php'),
-            ], 'config');
+            ], 'laravel-dump-server');
         }
     }
 
