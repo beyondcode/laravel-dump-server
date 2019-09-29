@@ -20,6 +20,14 @@ composer require --dev beyondcode/laravel-dump-server
 
 The package will register itself automatically. 
 
+If you are using lumen, add this to `bootstrap/app.php`:
+
+```php
+if ($app->environment('local')) {
+    $app->register(BeyondCode\DumpServer\DumpServerServiceProvider::class);
+}
+```
+
 Optionally you can publish the package configuration using:
 
 ```bash
