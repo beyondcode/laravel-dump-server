@@ -38,10 +38,10 @@ class Dumper
         if (class_exists(CliDumper::class)) {
             $data = (new VarCloner)->cloneVar($value);
 
-            if ($this->connection === null || $this->connection->write($data) === false) {
+//            if ($this->connection === null || $this->connection->write($data) === false) {
                 $dumper = in_array(PHP_SAPI, ['cli', 'phpdbg']) ? new CliDumper : new HtmlDumper;
                 $dumper->dump($data);
-            }
+//            }
         } else {
             var_dump($value);
         }
