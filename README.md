@@ -8,47 +8,9 @@ Bringing the [Symfony Var-Dump Server](https://symfony.com/doc/current/component
 
 This package will give you a dump server, that collects all your `dump` call outputs, so that it does not interfere with HTTP / API responses.
 
-> If you want to learn how to create reusable PHP packages yourself, take a look at my upcoming [PHP Package Development](https://phppackagedevelopment.com) video course.
+## Documentation
 
-## Installation
-
-You can install the package via composer:
-
-```bash
-composer require --dev beyondcode/laravel-dump-server
-```
-
-The package will register itself automatically. 
-
-Optionally you can publish the package configuration using:
-
-```bash
-php artisan vendor:publish --provider=BeyondCode\\DumpServer\\DumpServerServiceProvider
-```
-
-This will publish a file called `debug-server.php` in your `config` folder.
-In the config file, you can specify the dump server host that you want to listen on, in case you want to change the default value.
-
-## Usage
-
-Start the dump server by calling the artisan command:
-
-```bash
-php artisan dump-server
-```
-
-You can set the output format to HTML using the `--format` option:
-
-```bash
-php artisan dump-server --format=html > dump.html
-```
-
-And then you can, as you are used to, put `dump` calls in your methods. But instead of dumping the output in your current HTTP request, they will be dumped in the artisan command.
-This is very useful, when you want to dump data from API requests, without having to deal with HTTP errors.
-
-You can see it in action here:
-
-![Dump Server Demo](https://beyondco.de/github/dumpserver/dumpserver.gif)
+You can find the documentation on the [Beyond Code website](https://beyondco.de/docs/laravel-dump-server/installation).
 
 ### Changelog
 
