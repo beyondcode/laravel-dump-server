@@ -8,6 +8,14 @@ Bringing the [Symfony Var-Dump Server](https://symfony.com/doc/current/component
 
 This package will give you a dump server, that collects all your `dump` call outputs, so that it does not interfere with HTTP / API responses.
 
+## Installation
+
+You can install the package via composer:
+
+```bash
+composer require --dev beyondcode/laravel-dump-server
+```
+
 ## Documentation
 
 You can find the documentation on the [Beyond Code website](https://beyondco.de/docs/laravel-dump-server/installation).
