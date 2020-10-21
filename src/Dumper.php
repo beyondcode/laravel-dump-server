@@ -36,7 +36,7 @@ class Dumper
     public function dump($value)
     {
         if (class_exists(CliDumper::class)) {
-            $data = (new VarCloner)->cloneVar($value);
+            $data = $this->createVarCloner()->cloneVar($value);
 
             if ($this->connection === null || $this->connection->write($data) === false) {
                 $dumper = in_array(PHP_SAPI, ['cli', 'phpdbg']) ? new CliDumper : new HtmlDumper;
@@ -45,5 +45,13 @@ class Dumper
         } else {
             var_dump($value);
         }
+    }
+
+    /**
+     * @return VarCloner
+     */
+    protected function createVarCloner(): VarCloner
+    {
+        return new VarCloner();
     }
 }
