@@ -49,11 +49,9 @@ class DumpServerServiceProvider extends ServiceProvider
             'source' => new SourceContextProvider('utf-8', base_path()),
         ]);
 
-        $this->app->when(Dumper::class)->needs('$connection')->give($connection);
         $app = $this->app;
-
-        VarDumper::setHandler(function ($var) use ($app) {
-            $app->make(Dumper::class)->dump($var);
+        VarDumper::setHandler(function ($var) use ($app, $connection) {
+            $app->makeWith(Dumper::class, ['connection' => $connection])->dump($var);
         });
     }
 }
