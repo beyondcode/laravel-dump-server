@@ -13,6 +13,7 @@ env:
     - COMPOSER_FLAGS=""
 
 before_script:
+  - phpenv config-rm xdebug.ini
   - travis_retry composer self-update
   - travis_retry composer update ${COMPOSER_FLAGS} --no-interaction --prefer-source
 
