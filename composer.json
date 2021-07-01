@@ -26,6 +26,9 @@
         "larapack/dd": "^1.0",
         "phpunit/phpunit": "^7.0|^9.3"
     },
+    "conflict": {
+        "spatie/laravel-ray": "*"
+    },
     "autoload": {
         "psr-4": {
             "BeyondCode\\DumpServer\\": "src"
