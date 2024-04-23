@@ -1,7 +1,6 @@
 # Laravel Dump Server
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/beyondcode/laravel-dump-server.svg?style=flat-square)](https://packagist.org/packages/beyondcode/laravel-dump-server)
-[![Quality Score](https://img.shields.io/scrutinizer/g/beyondcode/laravel-dump-server.svg?style=flat-square)](https://scrutinizer-ci.com/g/beyondcode/laravel-dump-server)
 [![Total Downloads](https://img.shields.io/packagist/dt/beyondcode/laravel-dump-server.svg?style=flat-square)](https://packagist.org/packages/beyondcode/laravel-dump-server)
 
 Bringing the [Symfony Var-Dump Server](https://symfony.com/doc/current/components/var_dumper.html#the-dump-server) to Laravel.
