@@ -28,7 +28,7 @@ class RequestContextProvider implements ContextProviderInterface
      * @param  \Illuminate\Http\Request|null  $currentRequest
      * @return void
      */
-    public function __construct(Request $currentRequest = null)
+    public function __construct(?Request $currentRequest = null)
     {
         $this->currentRequest = $currentRequest;
         $this->cloner = new VarCloner;
